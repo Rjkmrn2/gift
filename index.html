@@ -46,7 +46,7 @@
 
 <div class="gift" id="gift">🎁</div>
 
-<!-- REAL GITHUB REPO (AS IS) -->
+
 <iframe id="flowerFrame" src="hello.html"></iframe>
 <script>
   const gift = document.getElementById("gift");
@@ -55,12 +55,11 @@
   gift.addEventListener("click", () => {
     gift.style.display = "none";
     frame.style.display = "block";
-
-    // redirect after bloom finishes
-    // adjust if you want longer
+    window.location.href = "hello.html";
   });
 </script>
 
 
 </body>
 </html>
+
