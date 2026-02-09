@@ -1,125 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>❤️</title>
-
-  <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      height: 100vh;
-      background: linear-gradient(135deg, #020617, #111827);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: system-ui;
-      color: white;
-      overflow: hidden;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.1);
-      backdrop-filter: blur(14px);
-      padding: 32px;
-      border-radius: 18px;
-      width: min(90vw, 380px);
-      height: 200px;
-      text-align: center;
-      position: relative;
-      animation: fadeIn 0.6s ease;
-    }
-
-    h2 {
-      margin-top: 0;
-    }
-
-    .buttons {
-      position: relative;
-      height: 60px;
-      margin-top: 20px;
-    }
-
-    button {
-      padding: 12px 22px;
-      border: none;
-      border-radius: 14px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-
-    button:active {
-      transform: scale(0.95);
-    }
-
-    #yes {
-      background: #22c55e;
-      position: absolute;
-      right: 0px;
-    }
-
-    #no {
-      background: #ef4444;
-      color: white;
-      position: absolute;
-      left: 0px;
-    }
-
-    .message {
-      font-size: 20px;
-      color: #fde047;
-      margin-top: 20px;
-      opacity: 0;
-      transform: scale(0.8);
-      transition: all 0.4s ease;
-    }
-
-    .message.show {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    /* Hearts */
-    .heart {
-      position: absolute;
-      bottom: -20px;
-      font-size: 20px;
-      animation: floatUp 2.5s ease forwards;
-    }
-
-    @keyframes floatUp {
-      to {
-        transform: translateY(-300px);
-        opacity: 0;
-      }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1); }
-    }
-  </style>
-</head>
-<body>
-
-<div class="card" id="card">
-  <h2>Will you be my Valentine che Jecia? ❤️</h2>
-
-  <div class="buttons" id="buttons">
-    <button id="yes">Yes 💖</button>
-    <button id="no">No 😅</button>
-  </div>
-
-  <div class="message" id="message">
-    Yay! 💖 I knew it!
-  </div>
-</div>
-
 <script>
   const no = document.getElementById("no");
   const yes = document.getElementById("yes");
@@ -128,10 +6,22 @@
   const card = document.getElementById("card");
 
   function moveNo() {
-    no.style.left = Math.random() * 180 + "px";
-    no.style.top = Math.random() * 60 + "px";
+    const container = buttons.getBoundingClientRect();
+    const btn = no.getBoundingClientRect();
+
+    const padding = 6;
+
+    const maxX = container.width - btn.width - padding;
+    const maxY = container.height - btn.height - padding;
+
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
+
+    // SAFE movement (never leaves container)
+    no.style.transform = `translate(${x}px, ${y}px)`;
   }
 
+  // desktop + mobile
   no.addEventListener("mouseenter", moveNo);
   no.addEventListener("touchstart", moveNo);
 
@@ -154,15 +44,3 @@
     }
   }
 </script>
-
-</body>
-</html>
-
-
-
-
-
-
-
-
-
