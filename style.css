@@ -81,13 +81,12 @@ body{
   justify-content: center;
 
   background-color: yellow;
+  border: none;
   padding: 12px 28px;
   font-size: 18px;
   font-weight: 600;
-  color: #111;
 
   border-radius: 20px;
-  text-decoration: none;
   cursor: pointer;
 
   transition: background-color 0.3s ease-in-out,
@@ -95,19 +94,10 @@ body{
               transform 0.15s ease;
 }
 
-.btn:hover {
-  background-color: orange;
-  box-shadow: 0 0 10px yellow,
-              0 0 20px yellow,
-              0 0 30px yellow;
-}
-
-.btn:active {
-  transform: scale(0.95);
-}
 
 
 
   
+
 
 
