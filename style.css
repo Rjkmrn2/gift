@@ -76,16 +76,22 @@ body{
 
 /* Estilo para el botón */
 .button button {
-    background-color: yellow; /* Fondo amarillo */
-    font-size: 25px;
-    font-weight: 600;
-    color: #111;
-    border: none; /* Sin bordes */
-    padding: 10px 10px; /* Ajusta el relleno según tu preferencia */
-    cursor: pointer;
-    position: relative; /* Necesario para el resplandor */
-    border-radius: 20px; /* Esquinas redondeadas */
-    transition: background-color 0.3s ease-in-out; /* Transición suave para el color de fondo */
+    display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: yellow;
+  padding: 14px 30px;   /* ONE padding only */
+  font-size: 25px;
+  font-weight: 700;     /* force bold */
+
+  color: #111;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+
+  line-height: 1;       /* IMPORTANT */
+  text-align: center;
   }
   
   /* Estilo para el enlace dentro del botón */
@@ -105,6 +111,7 @@ body{
 
 
   
+
 
 
 
