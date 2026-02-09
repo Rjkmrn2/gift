@@ -77,7 +77,6 @@ body{
 /* Estilo para el botón */
 .button button {
     background-color: yellow; /* Fondo amarillo */
-    padding: 12px 28px;
     font-size: 25px;
     font-weight: 600;
     color: #111;
@@ -106,6 +105,7 @@ body{
 
 
   
+
 
 
 
