@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>For You 💐</title>
 
   <style>
@@ -10,57 +10,32 @@
       margin: 0;
       height: 100vh;
       background: #000;
-      overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
       font-family: system-ui;
     }
 
-    /* Gift */
     .gift {
-      position: absolute;
-      bottom: 40px;
+      font-size: 64px;
       cursor: pointer;
-      font-size: 48px;
-      z-index: 10;
-      transition: transform 0.3s;
+      transition: transform 0.2s;
     }
 
     .gift:active {
-      transform: scale(0.95);
-    }
-
-    /* Flower repo iframe */
-    iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-      display: none;
+      transform: scale(0.9);
     }
   </style>
 </head>
 <body>
 
-<div class="gift" id="gift">🎁</div>
+  <div class="gift" id="gift">🎁</div>
 
-
-
-<script>
-  const gift = document.getElementById("gift");
-  const frame = document.getElementById("flowerFrame");
-
-  gift.addEventListener("click", () => {
-    gift.style.display = "none";
-    frame.style.display = "block";
-    window.location.href = "hello.html";
-  });
-</script>
-
+  <script>
+    document.getElementById("gift").addEventListener("click", () => {
+      window.location.href = "hello.html";
+    });
+  </script>
 
 </body>
 </html>
-
-
