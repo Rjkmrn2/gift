@@ -1,26 +1,29 @@
+const noBtn = document.getElementById("no");
+const yesBtn = document.getElementById("yes");
+const buttons = document.querySelector(".buttons");
+const message = document.getElementById("message");
 
-// Question logic
-if (document.body.classList.contains("question-page")) {
-  const noBtn = document.getElementById("noBtn");
-  const yesBtn = document.getElementById("yesBtn");
-  const msg = document.getElementById("message");
-  const card = document.querySelector(".card");
+function moveNo() {
+  const container = buttons.getBoundingClientRect();
+  const btn = noBtn.getBoundingClientRect();
 
-  function moveNo() {
-    const c = card.getBoundingClientRect();
-    const b = noBtn.getBoundingClientRect();
+  const padding = 8; // safety margin
 
-    noBtn.style.left = Math.random() * (c.width - b.width) + "px";
-    noBtn.style.top = Math.random() * (c.height - b.height) + "px";
-  }
+  const maxX = container.width - btn.width - padding;
+  const maxY = container.height - btn.height - padding;
 
-  noBtn.addEventListener("mouseenter", moveNo);
-  noBtn.addEventListener("touchstart", moveNo);
+  const x = Math.random() * maxX;
+  const y = Math.random() * maxY;
 
-  yesBtn.addEventListener("click", () => {
-    msg.textContent = "Yay! 💖 I knew it!";
-    yesBtn.style.display = "none";
-    noBtn.style.display = "none";
-  });
+  noBtn.style.left = `${Math.max(padding, x)}px`;
+  noBtn.style.top  = `${Math.max(padding, y)}px`;
 }
 
+// Desktop + mobile
+noBtn.addEventListener("mouseenter", moveNo);
+noBtn.addEventListener("touchstart", moveNo);
+
+yesBtn.addEventListener("click", () => {
+  buttons.style.display = "none";
+  message.classList.add("show");
+});
