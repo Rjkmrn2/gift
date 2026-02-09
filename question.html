@@ -128,12 +128,12 @@
   const card = document.getElementById("card");
 
   function moveNo() {
-    no.style.left = Math.random() * 360 + "px";
-    no.style.top = Math.random() * 90 + "px";
+    no.style.left = Math.random() * 180 + "px";
+    no.style.top = Math.random() * 60 + "px";
   }
 
   no.addEventListener("mouseenter", moveNo);
-  no.addEventListener("touchstart", moveNo);
+
 
   yes.addEventListener("click", () => {
     buttons.style.display = "none";
@@ -157,6 +157,7 @@
 
 </body>
 </html>
+
 
 
 
