@@ -1,9 +1,3 @@
-// Redirect after bloom
-if (document.body.classList.contains("flower-page")) {
-  setTimeout(() => {
-    window.location.href = "question.html";
-  }, 4000);
-}
 
 // Question logic
 if (document.body.classList.contains("question-page")) {
@@ -29,3 +23,4 @@ if (document.body.classList.contains("question-page")) {
     noBtn.style.display = "none";
   });
 }
+
