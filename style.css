@@ -78,12 +78,11 @@ body{
 .button button {
     background-color: yellow; /* Fondo amarillo */
     padding: 12px 28px;
-    font-size: 18px;
+    font-size: 25px;
     font-weight: 600;
     color: #111;
     border: none; /* Sin bordes */
     padding: 10px 10px; /* Ajusta el relleno según tu preferencia */
-    font-size: 25px; /* Tamaño de fuente */
     cursor: pointer;
     position: relative; /* Necesario para el resplandor */
     border-radius: 20px; /* Esquinas redondeadas */
@@ -107,6 +106,7 @@ body{
 
 
   
+
 
 
 
